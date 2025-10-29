@@ -25,7 +25,7 @@ const server = serve({
           const input: QueryChatgptRequest = {
             prompt: body.prompt,
             task_id: body.task_id || crypto.randomUUID(),
-            proxy_url: body.proxy_url || 'http://proxy.scrapeless.com:8080',
+            proxy_url: body.proxy_url || '',
             timeout: body.timeout || 180000,
             session_name: body.session_name || 'ChatGPT Query',
             web_search: body.web_search !== false,

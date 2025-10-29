@@ -14,13 +14,13 @@ async function testChatGPT() {
       },
       body: JSON.stringify({
         prompt: 'What makes Trae.ai different from other AI solutions?',
-        // Optional parameters:
-        // proxy_url: 'http://proxy.scrapeless.com:8080',
-        // timeout: 180000,
-        // session_name: 'My ChatGPT Session',
-        // web_search: true,
-        // session_recording: false,
-        // answer_type: 'text', // 'text' | 'html' | 'raw'
+        // Recommended settings to avoid timeout:
+        // proxy_url: 'http://proxy.scrapeless.com:8080-country_US', // Specify country
+        timeout: 300000, // 5 minutes (increase for slower connections)
+        session_name: 'My ChatGPT Session',
+        web_search: true, // Disable web search for faster response
+        session_recording: false,
+        answer_type: 'text', // 'text' | 'html' | 'raw'
         // webhook: 'https://your-webhook-url.com/callback',
       }),
     });
