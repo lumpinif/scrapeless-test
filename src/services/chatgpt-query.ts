@@ -67,7 +67,7 @@ interface StartChatParams extends QueryChatgptRequest {
 
 export class ChatgptService {
   logger = new Logger(this.constructor.name);
-  scrapeless = new Scrapeless({ apiKey: 'sk_IRRG8mLhM6MaLutyNBJvHMba2iQQICmonrFRRJ1202bI3dFlMr7vkzJFLxn45499' });
+  scrapeless = new Scrapeless({ apiKey: process.env.SCRAPELESS_API_KEY || '' });
 
   private timeoutMultiplier = 4; // Increased for more reliable navigation
   private defaultTimeout = 3 * 60 * 1000;
